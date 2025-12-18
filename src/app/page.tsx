@@ -5,7 +5,7 @@ export default function Home() {
     <main className="min-h-screen bg-white text-zinc-900">
       {/*TOP BAR*/}
       <div className="bg-blue-600 text-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-2.5">
           <div className="text-3xl font-semibold">Vincenzo Barager</div>
 
           <nav className="flex flex-wrap items-center justify-end gap-2 font-semibold">
@@ -54,13 +54,14 @@ export default function Home() {
 
       <div className="space-y-8 md:pt-5">
         <h1 className="text-3xl font-semibold tracking-tight text-blue-700 sm:text-4xl">
-          Computer Science student building things.
+          Computer Science student building software.
         </h1>
 
         <p className="max-w-3xl text-xl leading-relaxed text-blue-500">
           I’m a CS major at Florida Tech with a passion for creation. I've built full-stack web
-          apps, Unity projects, and systems-focused coursework projects.
+          apps, Unity projects, and systems-focused coursework projects. I made this site to showcase my most recent and relevant work.
         </p>
+
       </div>
     </header>
   </div>
