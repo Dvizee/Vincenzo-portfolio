@@ -139,12 +139,12 @@ export default function Home() {
 
   <div
     className="absolute h-[130px] w-[130px] bg-red-600"
-    style={{ top: 120, right: 0, transform: "rotate(-9deg)" }}
+    style={{ top: 70, right: 0, transform: "rotate(-9deg)" }}
   />
 
   <div
     className="absolute h-[120px] w-[120px] bg-red-600"
-    style={{ top: 460, right: 50, transform: "rotate(46deg)" }}
+    style={{ top: 430, right: 50, transform: "rotate(46deg)" }}
   />
 </div>
 
