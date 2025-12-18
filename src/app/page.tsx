@@ -90,7 +90,7 @@ export default function Home() {
 
 
   {/* Centered content */}
-  <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 space-y-6">
+  <div className="relative z-10 mx-auto max-w-6xl px-6 pt-14 pb-8 space-y-6">
     <h2 className="text-3xl font-semibold text-purple-700 border-l-4 border-purple-600 pl-4">
       Projects
     </h2>
@@ -149,7 +149,7 @@ export default function Home() {
 </div>
 
 
-  <div className="relative z-10 mx-auto max-w-6xl px-6 py-14 space-y-6">
+  <div className="relative z-10 mx-auto max-w-6xl px-6 pt-8 pb-14 space-y-6">
     <h2 className="text-3xl font-semibold text-red-600 border-l-4 border-red-600 pl-4">
       Experience
     </h2>
@@ -191,12 +191,12 @@ export default function Home() {
 
   {/* FOOTER */}
   <footer className="mt-5 bg-red-400 text-white">
-    <div className="mx-auto max-w-6xl px-6 py-10 space-y-7">
+    <div className="mx-auto max-w-6xl px-6 py-6 space-y-4">
       <div className="space-y-3">
         <h2 className="text-2xl sm:text-3xl font-semibold">Get in touch</h2>
 
         <p className="max-w-2xl text-white/90">
-          Feel free to reach out to me for any internship, job, research or other opportunity. I'm happy to discuss how I can contribute and grow with you or your organization. 
+          Feel free to reach out to me for any internship, job, research or other opportunity. I'd be happy to connect and talk further.
         </p>
 
         <div className="flex flex-wrap gap-4 pt-2">
