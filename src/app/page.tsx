@@ -107,7 +107,7 @@ export default function Home() {
         title="MyMangaReader"
         desc="Full-stack manga tracking web app built with Next.js and Node.js that allows users to search, track, rate, and manage manga using data from the Kitsu API."
         tags={["Next.js", "Node", "Docker"]}
-        image="/images/MyMangaReaderList.png"
+        image="/images/MMRL.png"
         link="https://github.com/jacobhallburns/MyMangaReader"
       />
       <ProjectCard
