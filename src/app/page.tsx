@@ -158,7 +158,7 @@ export default function Home() {
       <ExperienceItem
         role="E-Commerce Assistant"
         company="Florida Tech Copy Center"
-        dates="September 2025 – Present"
+        dates="September 2025 – December 2025"
         bullets={[
           "Maintained and updated a web-to-print portal for campus print orders.",
           "Configured products and pricing, and helped troubleshoot customer order issues.",
