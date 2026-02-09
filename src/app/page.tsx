@@ -12,7 +12,7 @@ export default function Home() {
             <TopLink href="https://www.linkedin.com/in/vincenzo-barager/">LinkedIn</TopLink>
             <TopLink href="https://github.com/Dvizee">GitHub</TopLink>
             <TopLink href="mailto:vincenzobarager@gmail.com">Email</TopLink>
-            <TopLink href="/Vincenzo-Barager-Resume.pdf">Resume</TopLink>
+            <TopLink href="/Vincenzo-Barager_Resume.pdf">Resume</TopLink>
           </nav>
         </div>
       </div>
