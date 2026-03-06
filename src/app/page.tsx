@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 py-10 space-y-14">
+      <div className="mx-auto max-w-6xl px-6 py-10 space-y-0">
         
   {/*HERO */}
   <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
@@ -44,12 +45,11 @@ export default function Home() {
   <div className="relative z-10 mx-auto max-w-6xl px-6 py-10">
     <header className="flex flex-col items-center gap-8 md:flex-row md:items-start">
       <Image
-        src="/images/me.png"
+        src="/images/Vincenzo.png"
         alt="Vincenzo Barager"
         width={320}
         height={410}
-        className="h-[380px] w-[300px] rounded-full border-4 border-blue-700 object-cover"
-        priority
+        className="h-[380px] w-[300px] rounded-full border-4 border-blue-700 object-cover object-[center_20%]"        priority
       />
 
       <div className="space-y-8 md:pt-5">
@@ -200,10 +200,20 @@ export default function Home() {
         </p>
 
         <div className="flex flex-wrap gap-4 pt-2">
-          <FooterLink href="mailto:vincenzobarager@gmail.com">Email</FooterLink>
-          <FooterLink href="https://www.linkedin.com/in/vincenzo-barager/">LinkedIn</FooterLink>
-          <FooterLink href="https://github.com/Dvizee">GitHub</FooterLink>
-        </div>
+
+        <FooterLink href="mailto:vincenzobarager@gmail.com">
+          <Mail size={22} />
+        </FooterLink>
+
+        <FooterLink href="https://www.linkedin.com/in/vincenzo-barager/">
+          <Linkedin size={22} />
+        </FooterLink>
+
+        <FooterLink href="https://github.com/Dvizee">
+          <Github size={22} />
+        </FooterLink>
+
+      </div>
       </div>
 
   <div className="h-px bg-white/30" />
@@ -316,8 +326,7 @@ function ProjectCard({
   link: string,
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white p-4 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-purple-400 hover:shadow-sm">
-      <div className="mb-4 border border-zinc-100">
+    <div className="rounded-2xl border border-purple-400 bg-white p-4 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-purple-600 hover:shadow-sm">      <div className="mb-4 border border-zinc-100">
         <Image
           src={image}
           alt={`${title} screenshot`}
