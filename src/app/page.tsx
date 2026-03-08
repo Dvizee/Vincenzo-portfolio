@@ -22,7 +22,7 @@ export default function Home() {
         
   {/*HERO */}
   <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
-  <div className="pointer-events-none absolute inset-0 z-0 hidden xl:block">
+  <div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
     {/* Left circle */}
     <div
       className="absolute h-[310px] w-[310px] rounded-full bg-blue-700"
@@ -38,7 +38,7 @@ export default function Home() {
 
 <div
     className="absolute h-[110px] w-[110px] rounded-full bg-blue-700"
-    style={{ right: 250, bottom: 140 }}
+    style={{ right: 100, bottom: 0 }}
   />
 </div>
 
@@ -58,18 +58,28 @@ export default function Home() {
         </h1>
 
         <p className="max-w-3xl text-xl leading-relaxed text-blue-500">
-          I’m a CS major at Florida Tech with a passion for creation. I've built full-stack web
-          apps, Unity projects, and systems-focused coursework projects. I made this site to showcase my most recent and relevant work.
+          I’m a CS major at Florida Tech with a passion for creation. I enjoy turning ideas into working software and have spent much of 
+          my time developing projects across web development, game engines, and systems programing.
         </p>
-
+        <p className="max-w-3xl text-xl leading-relaxed text-blue-500">
+          This site serves to showcase some of the projects I've worked on, including full-stack web applications, Unity development, 
+          and lower-level programming projects. Each project represents something I wanted to build, experiement with, or understand more deeply.  
+        </p>
       </div>
     </header>
   </div>
 </section>
-
+     <a
+  href="#projects"
+  className="flex items-center gap-4 pt-8 text-blue-600 font-semibold tracking-wide hover:text-blue-800"
+>
+  <span className="flex-grow h-px bg-blue-300 "></span>
+  <span className="whitespace-nowrap text-xl">scroll down to see my work <span className="inline-block text-3xl animate-[bounce_1.8s_ease-in-out_infinite]">↓</span></span>
+  <span className="flex-grow h-px bg-blue-300"></span>
+</a>
 
   {/* PROJECTS */}
-    <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
+  <section id="projects" className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
     <div className="pointer-events-none absolute inset-0 z-0 hidden lg:block">
       {/* Left triangle */}
       <div
@@ -131,7 +141,7 @@ export default function Home() {
 
 {/* EXPERIENCE */}
 <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
-<div className="pointer-events-none absolute inset-0 z-0 hidden xl:block">
+<div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
   <div
     className="absolute h-[140px] w-[140px] bg-red-500"
     style={{ top: 40, left: 45, transform: "rotate(8deg)" }}
