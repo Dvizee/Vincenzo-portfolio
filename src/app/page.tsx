@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 
 export default function Home() {
   return (
@@ -26,6 +26,7 @@ export default function Home() {
               Email
             </TopLink>
             <TopLink href="/Vincenzo_Barager-Resume.pdf">
+              <FileText size={18} className="inline mr-1" />
               Resume
             </TopLink>
           </nav>
@@ -552,8 +553,7 @@ function ProjectCard({
 
   if (layout === "side") {
   return (
-    <div className="rounded-2xl border border-purple-400 bg-white py-5 px-10 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-purple-600 hover:shadow-sm flex gap-13">
-
+    <div className="rounded-2xl border border-purple-400 bg-white py-5 px-6 sm:px-10 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-purple-600 hover:shadow-sm flex flex-col md:flex-row gap-6 md:gap-12">
       {/* Text */}
       <div className="flex flex-col flex-1">
         <h3 className="text-base font-semibold">
