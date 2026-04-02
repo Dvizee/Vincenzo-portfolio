@@ -275,7 +275,7 @@ export default function Home() {
       desc="Full-stack manga tracker built with Next.js, Node.js, and MongoDB for searching, tracking, rating, and managing manga via the Kitsu API."
       tags={["Next.js", "Node.js", "MongoDB", "Docker"]}
       image="/images/MMRL.png"
-      link="https://github.com/jacobhallburns/MyMangaReader"/>
+      link="https://my-manga-reader-pi.vercel.app/"/>
 
     <ProjectCard
       title="Rhythm Runner"
