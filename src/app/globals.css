@@ -1,52 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: white;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ===== Stepped text gradients (blue -> red) ===== */
-.g0 {
-  background-image: linear-gradient(to bottom, #2563eb 0%, #2563eb 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.g1 {
-  background-image: linear-gradient(to bottom, #2563eb 0%, #2563eb 80%, #dc2626 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.g2 {
-  background-image: linear-gradient(to bottom, #2563eb 0%, #2563eb 60%, #dc2626 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.g3 {
-  background-image: linear-gradient(to bottom, #2563eb 0%, #2563eb 40%, #dc2626 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.g4 {
-  background-image: linear-gradient(to bottom, #2563eb 0%, #2563eb 20%, #dc2626 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.g5 {
-  background-image: linear-gradient(to bottom, #dc2626 0%, #dc2626 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-html {
-  scroll-behavior: smooth;
 }

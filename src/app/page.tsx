@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, Trophy, Code2, Box, Wrench, Cpu} from "lucide-react";
 
 export default function Home() {
   return (
@@ -196,7 +196,7 @@ export default function Home() {
   <div className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-r-[200px] border-t-transparent border-b-transparent border-r-purple-400/25"
        style={{ top: '83%', left: '38%', transform: "rotate(250deg)" }} />
 
-  {/* Right-center */}
+  {/* Right center */}
   <div className="absolute h-0 w-0 border-t-[140px] border-b-[140px] border-l-[210px] border-t-transparent border-b-transparent border-l-purple-300/35"
        style={{ top: '12%', right: '20%', transform: "rotate(110deg)" }} />
 
@@ -263,28 +263,34 @@ export default function Home() {
   <div className="grid gap-6 sm:grid-cols-2">
 
     <ProjectCard
-      title="FIT AR Navigation App"
-      desc="Senior design project developing an AR indoor navigation system for Florida Tech’s Evans Library using Unity and Vuforia. The app provides multi-floor navigation, interactive AR information points, and self-guided tours that overlay digital content directly onto the physical environment."
-      tags={["Unity", "Vuforia", "C#"]}
-      image="/images/FITARNA.png"
-      link="https://jacobhallburns.github.io/FITARNA/"
-      layout="side"/>
+      title="Florida Tech AR Navigation App"
+      desc="Senior design project developing an AR indoor navigation system for Florida Tech’s Evans Library using Unity and Vuforia. Provides multi-floor navigation, interactive AR information points, and self-guided tours that overlay digital content directly onto the physical environment."
+      tags={["Unity", "Vuforia", "C#", "AR"]}
+      image="/images/FITARNA.jpg"
+      link="https://jacobhallburns.github.io/FITARNA/"/>
 
     <ProjectCard
       title="MyMangaReader"
       desc="Full-stack manga tracker built with Next.js, Node.js, and MongoDB for searching, tracking, rating, and managing manga via the Kitsu API."
-      tags={["Next.js", "Node.js", "MongoDB", "Docker"]}
+      tags={["Next.js", "Node.js", "MongoDB", "Docker", "TypeScript", "JavaScript"]}
       image="/images/MMRL.png"
       link="https://my-manga-reader-pi.vercel.app/"/>
 
     <ProjectCard
       title="Rhythm Runner"
       desc="2D rhythm game racer with custom pixel art, made with Unity and Aseprite."
-      tags={["Unity", "Aseprite"]}
+      tags={["Unity", "Aseprite", "C#"]}
       image="/images/rhythm-runner.png"
       link="https://tyler-win.itch.io/rhythm-runner"/>
 
     <ProjectCard
+      title="HeatShield"
+      desc="Hackathon-built remote health monitoring prototype that simulates live operator telemetry, sends updates to a Flask backend, and displays status through operator and supervisor dashboards."
+      tags={["React", "Flask", "Docker", "Leaflet", "Vite"]}
+      image="/images/HeatShield.png"
+      link="https://github.com/stamparkour/Groundswell-Startup-Hackathon-2026"/>
+
+      <ProjectCard
       title="Assembly Casino Game"
       desc="Slots + roulette in x86 assembly using Irvine32."
       tags={["x86", "Irvine32"]}
@@ -295,31 +301,56 @@ export default function Home() {
 </div>
 
 
-{/* Skills */}
+{/* Skills & Highlights */}
 <div className="relative z-10 mx-auto max-w-6xl px-6 pt-4 pb-16 space-y-8">
 
   <h2 className="text-3xl font-semibold text-purple-700 border-l-4 border-purple-600 pl-4">
-    Skills
+    Skills & Highlights
   </h2>
 
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
     <SkillGroup
       title="Languages"
-      skills={["JavaScript", "TypeScript", "Python", "Java", "C", "C#", "x86 Assembly",]}/>
+      skills={["JavaScript", "TypeScript", "Python", "Java", "C", "C#", "x86 Assembly"]}/>
 
     <SkillGroup
       title="Frameworks"
-      skills={["React", "Next.js", "Node.js", "Express", "Unity",]}/>
+      skills={["React", "Next.js", "Node.js", "Express", "Unity"]}/>
 
     <SkillGroup
       title="Tools"
-      skills={["Git", "GitHub", "Docker", "NPM", "Bash", "GitHub Actions", "Vercel",]}/>
+      skills={["Git", "GitHub", "Docker", "NPM", "Bash", "GitHub Actions", "Vercel"]}/>
 
     <SkillGroup
       title="Technologies"
-      skills={["MongoDB", "REST APIs", "AR Development", "Game Development",]}/>
+      skills={["MongoDB", "REST APIs", "AR Development", "Game Development"]}/>
+  </div>
 
+  {/* Row 2: Highlights */}
+  <div className="grid gap-4 sm:grid-cols-3">
+    <HighlightCard
+      icon={<Trophy size={20} />}
+      title="NCL Spring 2026"
+      value="Top 2.5%"
+      desc="176th out of 7,003 competitors"
+      detail="Individual Game · 2,880 / 3,000 points"
+    />
+
+    <HighlightCard
+      icon={<Trophy size={20} />}
+      title="Florida Medallion"
+      value="Scholarship"
+      desc="Merit-based academic scholarship"
+      detail="Florida Bright Futures"
+    />
+
+    <HighlightCard
+      icon={<Trophy size={20} />}
+      title="Dean’s List"
+      value="5x Dean’s List"
+      desc="Academic recognition across multiple semesters"
+      detail="Fall 2022 · Spring 2023 · Fall 2023 · Spring 2025 · Fall 2025"
+    />
   </div>
 </div>
 
@@ -627,8 +658,6 @@ function ProjectCard({
   );
 }
 
-import {Code2, Box, Wrench,Cpu,} from "lucide-react";
-
 function SkillGroup({
   title,
   skills,
@@ -676,6 +705,32 @@ function SkillGroup({
           );
         })}
       </div>
+    </div>
+  );
+}
+function HighlightCard({
+  icon,
+  title,
+  value,
+  desc,
+  detail,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  desc: string;
+  detail: string;
+}) {
+  return (
+    <div className="rounded-xl border border-purple-300 bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-purple-500 hover:shadow-md">
+      <div className="flex items-center gap-2 text-purple-700">
+        <span className="rounded-lg bg-purple-100 p-2">{icon}</span>
+        <h3 className="text-sm font-bold">{title}</h3>
+      </div>
+
+      <p className="mt-4 text-2xl font-bold text-purple-700">{value}</p>
+      <p className="mt-2 text-sm text-zinc-600">{desc}</p>
+      <p className="mt-1 text-xs font-medium text-zinc-400">{detail}</p>
     </div>
   );
 }
