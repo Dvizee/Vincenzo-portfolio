@@ -25,7 +25,7 @@ export default function Home() {
               <Mail size={18} className="inline mr-1" />
               Email
             </TopLink>
-            <TopLink href="/Vincenzo-Barager-Resume.pdf">
+            <TopLink href="/Barager-Vincenzo-Resume.pdf">
               <FileText size={18} className="inline mr-1" />
               Resume
             </TopLink>
@@ -332,9 +332,8 @@ export default function Home() {
       icon={<Trophy size={20} />}
       title="NCL Spring 2026"
       value="Top 2.5%"
-      desc="176th out of 7,003 competitors"
-      detail="Individual Game · 2,880 / 3,000 points"
-    />
+      desc="176th out of 7,006 competitors"
+      detail="Individual Game · 2,880 / 3,000 points"/>
 
     <HighlightCard
       icon={<Trophy size={20} />}
