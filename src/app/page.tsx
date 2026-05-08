@@ -301,58 +301,93 @@ export default function Home() {
 </div>
 
 
-{/* Skills & Highlights */}
+{/* Skills & Achievements */}
 <div className="relative z-10 mx-auto max-w-6xl px-6 pt-4 pb-16 space-y-8">
 
   <h2 className="text-3xl font-semibold text-purple-700 border-l-4 border-purple-600 pl-4">
-    Skills & Highlights
+    Skills & Achievements
   </h2>
 
+  {/* Skills */}
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
     <SkillGroup
       title="Languages"
-      skills={["JavaScript", "TypeScript", "Python", "Java", "C", "C#", "x86 Assembly"]}/>
+      skills={["JavaScript", "TypeScript", "Python", "Java", "C", "C#", "x86 Assembly"]}
+    />
 
     <SkillGroup
       title="Frameworks"
-      skills={["React", "Next.js", "Node.js", "Express", "Unity"]}/>
+      skills={["React", "Next.js", "Node.js", "Express", "Unity"]}
+    />
 
     <SkillGroup
       title="Tools"
-      skills={["Git", "GitHub", "Docker", "NPM", "Bash", "GitHub Actions", "Vercel"]}/>
+      skills={["Git", "GitHub", "Docker", "NPM", "Bash", "GitHub Actions", "Vercel"]}
+    />
 
     <SkillGroup
       title="Technologies"
-      skills={["MongoDB", "REST APIs", "AR Development", "Game Development"]}/>
+      skills={["MongoDB", "REST APIs", "AR Development", "Game Development"]}
+    />
   </div>
 
-  {/* Row 2: Highlights */}
-  <div className="grid gap-4 sm:grid-cols-3">
-    <HighlightCard
-      icon={<Trophy size={20} />}
-      title="NCL Spring 2026"
-      value="Top 2.5%"
-      desc="176th out of 7,006 competitors"
-      detail="Individual Game · 2,880 / 3,000 points"/>
+  {/* Achievements */}
+  <div className="space-y-4">
+    <h3 className="text-2xl font-semibold text-purple-700">
+      Achievements
+    </h3>
 
-    <HighlightCard
-      icon={<Trophy size={20} />}
-      title="Florida Medallion"
-      value="Scholarship"
-      desc="Merit-based academic scholarship"
-      detail="Florida Bright Futures"
-    />
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="NCL Spring 2026 Individual Game"
+        value="Diamond-1 Medal"
+        desc="96th Percentile Overall"
+        detail="176th out of 7,010 · 2,880 / 3,000 points"
+      />
 
-    <HighlightCard
-      icon={<Trophy size={20} />}
-      title="Dean’s List"
-      value="5x Dean’s List"
-      desc="Academic recognition across multiple semesters"
-      detail="Fall 2022 · Spring 2023 · Fall 2023 · Spring 2025 · Fall 2025"
-    />
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="NCL Spring 2026 Team Game"
+        value="Diamond-1 Medal"
+        desc="98th Percentile Overall"
+        detail="12th out of 341 · 2,985 / 3,000 points"
+      />
+
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="Dean’s List"
+        value="5x Dean’s List"
+        desc="Academic recognition"
+        detail="Fall 2022 · Spring 2023 · Fall 2023 · Spring 2025 · Fall 2025"
+      />
+
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="Florida Medallion"
+        value="Scholarship"
+        desc="Merit-based academic scholarship"
+        detail="Florida Bright Futures"
+      />
+
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="IBM SkillsBuild"
+        value="Digital Badge"
+        desc="Enterprise Design Thinking Practitioner"
+        detail="March 2026"
+      />
+
+      <HighlightCard
+        icon={<Trophy size={20} />}
+        title="IBM SkillsBuild"
+        value="Digital Badge"
+        desc="Make Agentic AI Work for You"
+        detail="March 2026"
+      />
+    </div>
   </div>
 </div>
-
 </section>
 
 {/* Gradient Transition */}
@@ -360,48 +395,48 @@ export default function Home() {
 
 {/* Experience */}
 <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
-<div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
+  <div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
 
-  {/* Squares */}
-  <div
-    className="absolute h-[140px] w-[140px] bg-red-500"
-    style={{ top: 40, left: 45, transform: "rotate(8deg)" }}/>
+    {/* Squares */}
+    <div
+      className="absolute h-[140px] w-[140px] bg-red-500"
+      style={{ top: 40, left: 45, transform: "rotate(8deg)" }}/>
 
-  <div
-    className="absolute h-[130px] w-[130px] bg-red-600"
-    style={{ top: 70, right: 0, transform: "rotate(-9deg)" }}/>
+    <div
+      className="absolute h-[130px] w-[130px] bg-red-600"
+      style={{ top: 70, right: 0, transform: "rotate(-9deg)" }}/>
 
-  <div
-    className="absolute h-[120px] w-[120px] bg-red-600"
-    style={{ top: 430, right: 50, transform: "rotate(46deg)" }}/>
+    <div
+      className="absolute h-[120px] w-[120px] bg-red-600"
+      style={{ top: 430, right: 50, transform: "rotate(46deg)" }}/>
 
 
-{/* Skyline */}
-<div className="absolute bottom-0 left-0 w-full">
-  <div className="w-full h-32 bg-gradient-to-t from-red-900/30 to-transparent absolute bottom-0 z-10"></div>
-  <div className="flex items-end">
-    <div className="w-[70px] h-[180px] bg-red-600 -mr-4"></div>
-    <div className="w-[120px] h-[260px] bg-red-700 -mr-4"></div>
-    <div className="w-[60px] h-[200px] bg-red-600 -mr-4"></div>
-    <div className="w-[150px] h-[320px] bg-red-800 -mr-4"></div>
-    <div className="w-[90px] h-[220px] bg-red-700 -mr-4"></div>
-    <div className="w-[130px] h-[280px] bg-red-800 -mr-4"></div>
-    <div className="w-[70px] h-[190px] bg-red-600 -mr-4"></div>
-    <div className="w-[170px] h-[340px] bg-red-900 -mr-4"></div>
-    <div className="w-[100px] h-[240px] bg-red-700 -mr-4"></div>
-    <div className="w-[140px] h-[300px] bg-red-800 -mr-4"></div>
-    <div className="w-[80px] h-[210px] bg-red-600 -mr-4"></div>
-    <div className="w-[160px] h-[330px] bg-red-900 -mr-4"></div>
-    <div className="w-[90px] h-[230px] bg-red-700 -mr-4"></div>
-    <div className="w-[130px] h-[290px] bg-red-800 -mr-4"></div>
-    <div className="w-[110px] h-[250px] bg-red-600 -mr-4"></div>
-    <div className="w-[140px] h-[310px] bg-red-700 -mr-4"></div>
-    <div className="w-[80px] h-[200px] bg-red-600 -mr-4"></div>
-    <div className="w-[150px] h-[280px] bg-red-800 -mr-4"></div>
-    <div className="w-[100px] h-[220px] bg-red-700 -mr-4"></div>
-    <div className="w-[120px] h-[260px] bg-red-800"></div>
+  {/* Skyline */}
+  <div className="absolute bottom-0 left-0 w-full">
+    <div className="w-full h-32 bg-gradient-to-t from-red-900/30 to-transparent absolute bottom-0 z-10"></div>
+    <div className="flex items-end">
+      <div className="w-[70px] h-[180px] bg-red-600 -mr-4"></div>
+      <div className="w-[120px] h-[260px] bg-red-700 -mr-4"></div>
+      <div className="w-[60px] h-[200px] bg-red-600 -mr-4"></div>
+      <div className="w-[150px] h-[320px] bg-red-800 -mr-4"></div>
+      <div className="w-[90px] h-[220px] bg-red-700 -mr-4"></div>
+      <div className="w-[130px] h-[280px] bg-red-800 -mr-4"></div>
+      <div className="w-[70px] h-[190px] bg-red-600 -mr-4"></div>
+      <div className="w-[170px] h-[340px] bg-red-900 -mr-4"></div>
+      <div className="w-[100px] h-[240px] bg-red-700 -mr-4"></div>
+      <div className="w-[140px] h-[300px] bg-red-800 -mr-4"></div>
+      <div className="w-[80px] h-[210px] bg-red-600 -mr-4"></div>
+      <div className="w-[160px] h-[330px] bg-red-900 -mr-4"></div>
+      <div className="w-[90px] h-[230px] bg-red-700 -mr-4"></div>
+      <div className="w-[130px] h-[290px] bg-red-800 -mr-4"></div>
+      <div className="w-[110px] h-[250px] bg-red-600 -mr-4"></div>
+      <div className="w-[140px] h-[310px] bg-red-700 -mr-4"></div>
+      <div className="w-[80px] h-[200px] bg-red-600 -mr-4"></div>
+      <div className="w-[150px] h-[280px] bg-red-800 -mr-4"></div>
+      <div className="w-[100px] h-[220px] bg-red-700 -mr-4"></div>
+      <div className="w-[120px] h-[260px] bg-red-800"></div>
+    </div>
   </div>
-</div>
 
 </div>
 
