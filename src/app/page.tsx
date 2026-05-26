@@ -3,9 +3,9 @@ import { Github, Linkedin, Mail, FileText, Trophy, Code2, Box, Wrench, Cpu} from
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-zinc-900">
+    <main className="min-h-screen overflow-x-hidden bg-white text-zinc-900">
       {/*Top Bar*/}
-      <div className="bg-white border-b border-blue-200">
+      <div className="relative z-40 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-2.5">
           <div 
           className="text-4xl font-semibold text-blue-600"
@@ -35,8 +35,8 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl px-6 py-0 space-y-0">
         
-  {/* Hero */}
-<section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800">
+{/* Hero */}
+<section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-visible bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800">
 
 {/* Waves */}
 <div className="absolute inset-0 z-0 pointer-events-none">
@@ -74,31 +74,43 @@ export default function Home() {
 </div>
 
 {/* Circles */}
-<div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
+<div className="pointer-events-none absolute inset-0 z-20 hidden [@media(min-width:1450px)]:block">
 
-  {/* Left circle */}
+  {/* Left big circle */}
   <div
     className="absolute h-[310px] w-[310px] rounded-full bg-white"
-    style={{ left: 130, top: 140 }}/>
+    style={{ left: 130, top: 140 }}
+  />
 
-  {/* Right circle */}
+  {/* Left accent circle */}
+  <div
+    className="circle-intro-spin absolute h-[180px] w-[180px] rounded-full bg-white"
+    style={{
+      left: -80,
+      top: 30,
+      transformOrigin: "365px 265px",
+    }}
+  />
+
+  {/* Right big circle */}
   <div
     className="absolute h-[310px] w-[310px] rounded-full bg-white"
-    style={{ right: -90, bottom: 135 }}/>
+    style={{ right: -90, bottom: 135 }}
+  />
 
-  {/* Small circle */}
+  {/* Right accent circle */}
   <div
-    className="absolute h-[110px] w-[110px] rounded-full bg-white"
-    style={{ right: 100, bottom: 0 }}/>
+    className="circle-intro-spin-slow absolute h-[110px] w-[110px] rounded-full bg-white"
+    style={{
+      right: 100,
+      bottom: 0,
+      transformOrigin: "145px -180px",
+    }}
+  />
 
- {/* top-left circle */}
-  <div
-    className="absolute h-[180px] w-[180px] rounded-full bg-white"
-    style={{ left: -80, top: 30 }}/>
 </div>
 
-
-<div className="relative z-10 mx-auto max-w-6xl px-6 py-20">
+<div className="relative z-30 mx-auto max-w-6xl px-6 py-20">
 
 <header className="flex flex-col items-center gap-10 md:flex-row md:items-start">
 
@@ -112,17 +124,23 @@ export default function Home() {
 
 <div className="space-y-8 md:pt-6">
 
-<h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+<h1
+  className="text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+  style={{
+    textShadow:
+      "-1px -1px 0 #1D4ED8, 1px -1px 0 #1D4ED8, -1px 1px 0 #1D4ED8, 1px 1px 0 #1D4ED8",
+  }}
+>
   Computer Science student building software.
 </h1>
 
 <div className="rounded-xl border border-white/40 bg-white/10 backdrop-blur-md p-6 space-y-6 max-w-3xl">
 
-<p className="text-lg leading-relaxed text-blue-100">
+<p className="text-lg leading-relaxed text-blue-100 hero-text-outline">
   I’m a CS major at Florida Tech with a passion for creation. I enjoy turning ideas into working software and have spent much of my time developing projects across web development, game engines, and systems programming.
 </p>
 
-<p className="text-lg leading-relaxed text-blue-100">
+<p className="text-lg leading-relaxed text-blue-100 hero-text-outline">
   This site showcases projects I've built including full-stack web applications, Unity development, and lower-level programming work. Each project represents something I wanted to build, experiment with, or better understand.
 </p>
 
@@ -148,105 +166,316 @@ export default function Home() {
 
 {/* Projects and Skills */}
 <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-purple-100">
+
 {/* Triangle Background */}
 <div className="pointer-events-none absolute inset-0 z-0 hidden lg:block">
 
   {/* Left side */}
-  <div className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-l-[150px] border-t-transparent border-b-transparent border-l-purple-300/60"
-       style={{ top: '2%', left: '3%', transform: "rotate(60deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-l-[150px] border-t-transparent border-b-transparent border-l-purple-300/80"
+    style={{
+      top: '2%',
+      left: '3%',
+      '--start-rotation': '60deg',
+      animation: 'triangle-spin 80s linear infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-r-[110px] border-t-transparent border-b-transparent border-r-purple-400/50"
-       style={{ top: '25%', left: '5%', transform: "rotate(120deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-r-[110px] border-t-transparent border-b-transparent border-r-purple-400/75"
+    style={{
+      top: '25%',
+      left: '5%',
+      '--start-rotation': '120deg',
+      animation: 'triangle-float 12s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-l-[200px] border-t-transparent border-b-transparent border-l-purple-500/30"
-       style={{ top: '45%', left: '3%', transform: "rotate(280deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-l-[200px] border-t-transparent border-b-transparent border-l-purple-500/45"
+    style={{
+      top: '45%',
+      left: '3%',
+      '--start-rotation': '280deg',
+      animation: 'triangle-float-side 15s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-600/35"
-       style={{ top: '70%', left: '6%', transform: "rotate(190deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-600/60"
+    style={{
+      top: '70%',
+      left: '6%',
+      '--start-rotation': '190deg',
+      animation: 'triangle-float-side 13s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[110px] border-b-[110px] border-l-[170px] border-t-transparent border-b-transparent border-l-purple-300/40"
-       style={{ top: '83%', left: '-2%', transform: "rotate(350deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[110px] border-b-[110px] border-l-[170px] border-t-transparent border-b-transparent border-l-purple-300/65"
+    style={{
+      top: '83%',
+      left: '-2%',
+      '--start-rotation': '350deg',
+      animation: 'triangle-spin 105s linear infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Left-center */}
-  <div className="absolute h-0 w-0 border-t-[60px] border-b-[60px] border-r-[90px] border-t-transparent border-b-transparent border-r-purple-400/55"
-       style={{ top: '1%', left: '30%', transform: "rotate(70deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[60px] border-b-[60px] border-r-[90px] border-t-transparent border-b-transparent border-r-purple-400/80"
+    style={{
+      top: '1%',
+      left: '30%',
+      '--start-rotation': '70deg',
+      animation: 'triangle-float 10s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[90px] border-b-[90px] border-l-[140px] border-t-transparent border-b-transparent border-l-purple-500/45"
-       style={{ top: '35%', left: '18%', transform: "rotate(220deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[90px] border-b-[90px] border-l-[140px] border-t-transparent border-b-transparent border-l-purple-500/70"
+    style={{
+      top: '35%',
+      left: '18%',
+      '--start-rotation': '220deg',
+      animation: 'triangle-spin 90s linear infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[50px] border-b-[50px] border-r-[80px] border-t-transparent border-b-transparent border-r-purple-300/60"
-       style={{ top: '55%', left: '20%', transform: "rotate(150deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[50px] border-b-[50px] border-r-[80px] border-t-transparent border-b-transparent border-r-purple-300/80"
+    style={{
+      top: '55%',
+      left: '20%',
+      '--start-rotation': '150deg',
+      animation: 'triangle-float 12s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-600/25"
-       style={{ top: '80%', left: '10%', transform: "rotate(80deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-600/45"
+    style={{
+      top: '80%',
+      left: '10%',
+      '--start-rotation': '80deg',
+      animation: 'triangle-float-side 16s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Center */}
-  <div className="absolute h-0 w-0 border-t-[150px] border-b-[150px] border-r-[230px] border-t-transparent border-b-transparent border-r-purple-400/30"
-       style={{ top: '5%', left: '44%', transform: "rotate(200deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[150px] border-b-[150px] border-r-[230px] border-t-transparent border-b-transparent border-r-purple-400/50"
+    style={{
+      top: '5%',
+      left: '44%',
+      '--start-rotation': '200deg',
+      animation: 'triangle-spin 115s linear infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-l-[120px] border-t-transparent border-b-transparent border-l-purple-500/40"
-       style={{ top: '30%', left: '40%', transform: "rotate(90deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-l-[120px] border-t-transparent border-b-transparent border-l-purple-500/65"
+    style={{
+      top: '30%',
+      left: '40%',
+      '--start-rotation': '90deg',
+      animation: 'triangle-float 13s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-r-[150px] border-t-transparent border-b-transparent border-r-purple-300/50"
-       style={{ top: '48%', left: '45%', transform: "rotate(300deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-r-[150px] border-t-transparent border-b-transparent border-r-purple-300/75"
+    style={{
+      top: '48%',
+      left: '45%',
+      '--start-rotation': '300deg',
+      animation: 'triangle-float-side 12s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-l-[110px] border-t-transparent border-b-transparent border-l-purple-600/45"
-       style={{ top: '72%', left: '42%', transform: "rotate(140deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-l-[110px] border-t-transparent border-b-transparent border-l-purple-600/65"
+    style={{
+      top: '72%',
+      left: '42%',
+      '--start-rotation': '140deg',
+      animation: 'triangle-float 15s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-r-[200px] border-t-transparent border-b-transparent border-r-purple-400/25"
-       style={{ top: '83%', left: '38%', transform: "rotate(250deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-r-[200px] border-t-transparent border-b-transparent border-r-purple-400/45"
+    style={{
+      top: '83%',
+      left: '38%',
+      '--start-rotation': '250deg',
+      animation: 'triangle-spin 95s linear infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Right center */}
-  <div className="absolute h-0 w-0 border-t-[140px] border-b-[140px] border-l-[210px] border-t-transparent border-b-transparent border-l-purple-300/35"
-       style={{ top: '12%', right: '20%', transform: "rotate(110deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[140px] border-b-[140px] border-l-[210px] border-t-transparent border-b-transparent border-l-purple-300/60"
+    style={{
+      top: '12%',
+      right: '20%',
+      '--start-rotation': '110deg',
+      animation: 'triangle-spin 100s linear infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[60px] border-b-[60px] border-r-[90px] border-t-transparent border-b-transparent border-r-purple-500/50"
-       style={{ top: '32%', right: '25%', transform: "rotate(30deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[60px] border-b-[60px] border-r-[90px] border-t-transparent border-b-transparent border-r-purple-500/75"
+    style={{
+      top: '32%',
+      right: '25%',
+      '--start-rotation': '30deg',
+      animation: 'triangle-float 10s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[110px] border-b-[110px] border-l-[170px] border-t-transparent border-b-transparent border-l-purple-400/40"
-       style={{ top: '52%', right: '22%', transform: "rotate(260deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[110px] border-b-[110px] border-l-[170px] border-t-transparent border-b-transparent border-l-purple-400/65"
+    style={{
+      top: '52%',
+      right: '22%',
+      '--start-rotation': '260deg',
+      animation: 'triangle-float-side 13s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-600/45"
-       style={{ top: '72%', right: '18%', transform: "rotate(160deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-600/70"
+    style={{
+      top: '72%',
+      right: '18%',
+      '--start-rotation': '160deg',
+      animation: 'triangle-float-side 12s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-300/30"
-       style={{ top: '79%', right: '24%', transform: "rotate(340deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-300/55"
+    style={{
+      top: '79%',
+      right: '24%',
+      '--start-rotation': '340deg',
+      animation: 'triangle-spin 110s linear infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Right side */}
-  <div className="absolute h-0 w-0 border-t-[90px] border-b-[90px] border-r-[140px] border-t-transparent border-b-transparent border-r-purple-500/40"
-       style={{ top: '3%', right: '5%', transform: "rotate(70deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[90px] border-b-[90px] border-r-[140px] border-t-transparent border-b-transparent border-r-purple-500/65"
+    style={{
+      top: '3%',
+      right: '5%',
+      '--start-rotation': '70deg',
+      animation: 'triangle-float 13s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-l-[200px] border-t-transparent border-b-transparent border-l-purple-400/30"
-       style={{ top: '22%', right: '8%', transform: "rotate(130deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[130px] border-b-[130px] border-l-[200px] border-t-transparent border-b-transparent border-l-purple-400/50"
+    style={{
+      top: '22%',
+      right: '8%',
+      '--start-rotation': '130deg',
+      animation: 'triangle-spin 85s linear infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-r-[110px] border-t-transparent border-b-transparent border-r-purple-600/45"
-       style={{ top: '42%', right: '3%', transform: "rotate(220deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[70px] border-b-[70px] border-r-[110px] border-t-transparent border-b-transparent border-r-purple-600/70"
+    style={{
+      top: '42%',
+      right: '3%',
+      '--start-rotation': '220deg',
+      animation: 'triangle-float-side 15s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-l-[150px] border-t-transparent border-b-transparent border-l-purple-300/50"
-       style={{ top: '52%', right: '7%', transform: "rotate(290deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[100px] border-b-[100px] border-l-[150px] border-t-transparent border-b-transparent border-l-purple-300/75"
+    style={{
+      top: '52%',
+      right: '7%',
+      '--start-rotation': '290deg',
+      animation: 'triangle-float 12s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-400/55"
-       style={{ top: '82%', right: '4%', transform: "rotate(40deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[80px] border-b-[80px] border-r-[120px] border-t-transparent border-b-transparent border-r-purple-400/80"
+    style={{
+      top: '82%',
+      right: '4%',
+      '--start-rotation': '40deg',
+      animation: 'triangle-float-side 13s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Small triangles */}
-  <div className="absolute h-0 w-0 border-t-[35px] border-b-[35px] border-l-[55px] border-t-transparent border-b-transparent border-l-purple-400/70"
-       style={{ top: '7%', left: '70%', transform: "rotate(200deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[35px] border-b-[35px] border-l-[55px] border-t-transparent border-b-transparent border-l-purple-400/90"
+    style={{
+      top: '7%',
+      left: '70%',
+      '--start-rotation': '200deg',
+      animation: 'triangle-float 9s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[40px] border-b-[40px] border-r-[60px] border-t-transparent border-b-transparent border-r-purple-300/65"
-       style={{ top: '38%', left: '52%', transform: "rotate(80deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[40px] border-b-[40px] border-r-[60px] border-t-transparent border-b-transparent border-r-purple-300/90"
+    style={{
+      top: '38%',
+      left: '52%',
+      '--start-rotation': '80deg',
+      animation: 'triangle-float-side 10s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[30px] border-b-[30px] border-l-[45px] border-t-transparent border-b-transparent border-l-purple-400/75"
-       style={{ top: '62%', right: '45%', transform: "rotate(340deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[30px] border-b-[30px] border-l-[45px] border-t-transparent border-b-transparent border-l-purple-400/90"
+    style={{
+      top: '62%',
+      right: '45%',
+      '--start-rotation': '340deg',
+      animation: 'triangle-float 10s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[45px] border-b-[45px] border-r-[70px] border-t-transparent border-b-transparent border-r-purple-600/60"
-       style={{ bottom: '15%', right: '35%', transform: "rotate(160deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[45px] border-b-[45px] border-r-[70px] border-t-transparent border-b-transparent border-r-purple-600/85"
+    style={{
+      bottom: '15%',
+      right: '35%',
+      '--start-rotation': '160deg',
+      animation: 'triangle-float-side 9s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
   {/* Edge triangles */}
-  <div className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-400/30"
-       style={{ top: '15%', left: '-3%', transform: "rotate(30deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[120px] border-b-[120px] border-l-[180px] border-t-transparent border-b-transparent border-l-purple-400/55"
+    style={{
+      top: '15%',
+      left: '-3%',
+      '--start-rotation': '30deg',
+      animation: 'triangle-float 15s ease-in-out infinite',
+    } as React.CSSProperties}
+  />
 
-  <div className="absolute h-0 w-0 border-t-[140px] border-b-[140px] border-r-[210px] border-t-transparent border-b-transparent border-r-purple-500/25"
-       style={{ bottom: '14%', right: '-4%', transform: "rotate(210deg)" }} />
+  <div
+    className="absolute h-0 w-0 border-t-[140px] border-b-[140px] border-r-[210px] border-t-transparent border-b-transparent border-r-purple-500/45"
+    style={{
+      bottom: '14%',
+      right: '-4%',
+      '--start-rotation': '210deg',
+      animation: 'triangle-spin 95s linear infinite',
+    } as React.CSSProperties}
+  />
 
 </div>
 
@@ -296,6 +525,13 @@ export default function Home() {
       tags={["x86", "Irvine32"]}
       image="/images/Casino.png"
       link="https://github.com/Dvizee/Assembly-Casino-Game"/>
+
+      <ProjectCard
+      title="Personal Portfolio Website"
+      desc="Responsive portfolio website built with Next.js and Tailwind CSS to showcase my projects, experience, technical skills, and achievements. Includes custom animated sections, responsive layouts, and deployed project links."
+      tags={["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design", "Vercel"]}
+      image="/images/Portfolio.png"
+      link="https://github.com/Dvizee/Vincenzo-portfolio"/>
 
   </div>
 </div>
@@ -397,49 +633,153 @@ export default function Home() {
 <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden bg-white">
   <div className="pointer-events-none absolute inset-0 z-0 hidden [@media(min-width:1450px)]:block">
 
-    {/* Squares */}
+    {/* Floating Squares */}
     <div
-      className="absolute h-[140px] w-[140px] bg-red-500"
-      style={{ top: 40, left: 45, transform: "rotate(8deg)" }}/>
+      className="float-square-1 absolute h-[140px] w-[140px] bg-red-500"
+      style={{ top: 40, left: 45 }}
+    />
 
     <div
-      className="absolute h-[130px] w-[130px] bg-red-600"
-      style={{ top: 70, right: 0, transform: "rotate(-9deg)" }}/>
+      className="float-square-2 absolute h-[130px] w-[130px] bg-red-600"
+      style={{ top: 70, right: 0 }}
+    />
 
     <div
       className="absolute h-[120px] w-[120px] bg-red-600"
-      style={{ top: 430, right: 50, transform: "rotate(46deg)" }}/>
+      style={{ top: 430, right: 50, transform: "rotate(46deg)" }}
+    />
 
+{/* Skyline */}
+<div
+  className="absolute bottom-0 left-0 w-full"
+  style={
+    {
+      "--city-red-600": "#dc2626",
+      "--city-red-700": "#b91c1c",
+      "--city-red-800": "#991b1b",
+      "--city-red-900": "#7f1d1d",
+    } as React.CSSProperties
+  }>
+  <div className="relative w-full">
 
-  {/* Skyline */}
-  <div className="absolute bottom-0 left-0 w-full">
-    <div className="w-full h-32 bg-gradient-to-t from-red-900/30 to-transparent absolute bottom-0 z-10"></div>
-    <div className="flex items-end">
-      <div className="w-[70px] h-[180px] bg-red-600 -mr-4"></div>
-      <div className="w-[120px] h-[260px] bg-red-700 -mr-4"></div>
-      <div className="w-[60px] h-[200px] bg-red-600 -mr-4"></div>
-      <div className="w-[150px] h-[320px] bg-red-800 -mr-4"></div>
-      <div className="w-[90px] h-[220px] bg-red-700 -mr-4"></div>
-      <div className="w-[130px] h-[280px] bg-red-800 -mr-4"></div>
-      <div className="w-[70px] h-[190px] bg-red-600 -mr-4"></div>
-      <div className="w-[170px] h-[340px] bg-red-900 -mr-4"></div>
-      <div className="w-[100px] h-[240px] bg-red-700 -mr-4"></div>
-      <div className="w-[140px] h-[300px] bg-red-800 -mr-4"></div>
-      <div className="w-[80px] h-[210px] bg-red-600 -mr-4"></div>
-      <div className="w-[160px] h-[330px] bg-red-900 -mr-4"></div>
-      <div className="w-[90px] h-[230px] bg-red-700 -mr-4"></div>
-      <div className="w-[130px] h-[290px] bg-red-800 -mr-4"></div>
-      <div className="w-[110px] h-[250px] bg-red-600 -mr-4"></div>
-      <div className="w-[140px] h-[310px] bg-red-700 -mr-4"></div>
-      <div className="w-[80px] h-[200px] bg-red-600 -mr-4"></div>
-      <div className="w-[150px] h-[280px] bg-red-800 -mr-4"></div>
-      <div className="w-[100px] h-[220px] bg-red-700 -mr-4"></div>
-      <div className="w-[120px] h-[260px] bg-red-800"></div>
+    {/* Buildings */}
+    <div className="relative z-10 flex items-end">
+      <div className="w-[70px] h-[180px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[120px] h-[260px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[60px] h-[200px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[150px] h-[320px] bg-[var(--city-red-800)] -mr-4"></div>
+      <div className="w-[90px] h-[220px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[130px] h-[280px] bg-[var(--city-red-800)] -mr-4"></div>
+      <div className="w-[70px] h-[190px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[170px] h-[340px] bg-[var(--city-red-900)] -mr-4"></div>
+      <div className="w-[100px] h-[240px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[140px] h-[300px] bg-[var(--city-red-800)] -mr-4"></div>
+      <div className="w-[80px] h-[210px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[160px] h-[330px] bg-[var(--city-red-900)] -mr-4"></div>
+      <div className="w-[90px] h-[230px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[130px] h-[290px] bg-[var(--city-red-800)] -mr-4"></div>
+      <div className="w-[110px] h-[250px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[140px] h-[310px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[80px] h-[200px] bg-[var(--city-red-600)] -mr-4"></div>
+      <div className="w-[150px] h-[280px] bg-[var(--city-red-800)] -mr-4"></div>
+      <div className="w-[100px] h-[220px] bg-[var(--city-red-700)] -mr-4"></div>
+      <div className="w-[120px] h-[260px] bg-[var(--city-red-800)]"></div>
     </div>
+
+    {/* Cars */}
+    <div className="absolute bottom-0 w-full overflow-hidden z-20" style={{ height: "42px" }}>
+
+      {/* Car 1 */}
+      <div
+        className="car-1 absolute bottom-0"
+        style={{ width: "76px", "--car-color": "var(--city-red-700)" } as React.CSSProperties}
+      >
+        <div className="relative h-[34px]">
+          <div className="absolute bottom-[5px] left-0 flex items-end">
+            <div className="w-[16px] h-[15px] rounded-l-sm bg-[var(--car-color)]"></div>
+            <div className="w-[38px] h-[25px] rounded-t-md bg-[var(--car-color)] -mx-px"></div>
+            <div className="w-[16px] h-[15px] rounded-r-sm bg-[var(--car-color)]"></div>
+          </div>
+
+          <div className="absolute bottom-0 left-[9px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+          <div className="absolute bottom-0 right-[13px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+        </div>
+      </div>
+
+      {/* Car 2 */}
+      <div
+        className="car-2 absolute bottom-0"
+        style={{ width: "80px", "--car-color": "var(--city-red-700)" } as React.CSSProperties}
+      >
+        <div className="relative h-[34px]">
+          <div className="absolute bottom-[5px] left-0 flex items-end">
+            <div className="w-[17px] h-[17px] rounded-l-sm bg-[var(--car-color)]"></div>
+            <div className="w-[39px] h-[25px] rounded-t-md bg-[var(--car-color)] -mx-px"></div>
+            <div className="w-[17px] h-[17px] rounded-r-sm bg-[var(--car-color)]"></div>
+          </div>
+
+          <div className="absolute bottom-0 left-[10px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+          <div className="absolute bottom-0 right-[14px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+        </div>
+      </div>
+
+      {/* Car 3 */}
+      <div
+        className="car-3 absolute bottom-0"
+        style={{ width: "72px", "--car-color": "var(--city-red-800)" } as React.CSSProperties}
+      >
+        <div className="relative h-[32px]">
+          <div className="absolute bottom-[5px] left-0 flex items-end">
+            <div className="w-[15px] h-[15px] rounded-l-sm bg-[var(--car-color)]"></div>
+            <div className="w-[34px] h-[23px] rounded-t-md bg-[var(--car-color)] -mx-px"></div>
+            <div className="w-[15px] h-[15px] rounded-r-sm bg-[var(--car-color)]"></div>
+          </div>
+
+          <div className="absolute bottom-0 left-[8px] h-[11px] w-[11px] rounded-full bg-[var(--car-color)]"></div>
+          <div className="absolute bottom-0 right-[13px] h-[11px] w-[11px] rounded-full bg-[var(--car-color)]"></div>
+        </div>
+      </div>
+
+      {/* Car 4 */}
+      <div
+        className="car-4 absolute bottom-0"
+        style={{ width: "76px", "--car-color": "var(--city-red-900)" } as React.CSSProperties}
+      >
+        <div className="relative h-[33px]">
+          <div className="absolute bottom-[5px] left-0 flex items-end">
+            <div className="w-[15px] h-[16px] rounded-l-sm bg-[var(--car-color)]"></div>
+            <div className="w-[38px] h-[23px] rounded-t-md bg-[var(--car-color)] -mx-px"></div>
+            <div className="w-[15px] h-[16px] rounded-r-sm bg-[var(--car-color)]"></div>
+          </div>
+
+          <div className="absolute bottom-0 left-[9px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+          <div className="absolute bottom-0 right-[13px] h-[12px] w-[12px] rounded-full bg-[var(--car-color)]"></div>
+        </div>
+      </div>
+
+      {/* Truck */}
+      <div
+        className="truck-1 absolute bottom-0"
+        style={{ width: "115px", "--car-color": "var(--city-red-800)" } as React.CSSProperties}
+      >
+        <div className="relative h-[40px]">
+          <div className="absolute bottom-[5px] left-0 flex items-end">
+            <div className="w-[78px] h-[28px] rounded-t-sm bg-[var(--car-color)]"></div>
+            <div className="w-[23px] h-[21px] rounded-tr-md bg-[var(--car-color)] -mx-px"></div>
+          </div>
+
+          <div className="absolute bottom-0 left-[14px] h-[13px] w-[13px] rounded-full bg-[var(--car-color)]"></div>
+          <div className="absolute bottom-0 right-[24px] h-[13px] w-[13px] rounded-full bg-[var(--car-color)]"></div>
+        </div>
+      </div>
+    </div>
+
+    {/* Skyline haze */}
+    <div className="pointer-events-none absolute bottom-0 left-0 z-30 h-32 w-full bg-gradient-to-t from-red-900/30 to-transparent"></div>
+
   </div>
-
 </div>
-
+</div>
 
   <div className="relative z-10 mx-auto max-w-6xl px-6 pt-8 pb-18 space-y-6">
     <h2 className="text-3xl font-semibold text-red-600 border-l-4 border-red-600 pl-4">
@@ -455,7 +795,9 @@ export default function Home() {
           "Maintained and updated a web-to-print portal for campus print orders.",
           "Configured products and pricing, and helped troubleshoot customer order issues.",
           "Created and refined internal documentation (SOPs) to streamline recurring tasks.",
-        ]}/>
+        ]}
+      />
+
       <ExperienceItem
         role="Crew Member"
         company="Rathskeller, Florida Tech"
@@ -463,7 +805,8 @@ export default function Home() {
         bullets={[
           "Displayed a high level of responsibility and reliability in performing managerial duties.",
           "Demonstrated excellent customer service while completing orders in the campus eatery.",
-        ]}/>
+        ]}
+      />
 
       <ExperienceItem
         role="Team Member"
@@ -472,10 +815,11 @@ export default function Home() {
         bullets={[
           "Collaborated in a fast-paced environment to keep orders accurate and on time.",
           "Communicated clearly with coworkers and customers to resolve issues quickly.",
-        ]}/>
+        ]}
+      />
     </div>
   </div>
-  </section>
+</section>
   </div>
 
 <div className="h-2 bg-red-900"></div>
