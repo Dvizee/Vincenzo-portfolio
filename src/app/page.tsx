@@ -25,7 +25,7 @@ export default function Home() {
               <Mail size={18} className="inline mr-1" />
               Email
             </TopLink>
-            <TopLink href="/Barager-Vincenzo-Resume.pdf">
+            <TopLink href="/Vincenzo_Barager_Resume.pdf">
               <FileText size={18} className="inline mr-1" />
               Resume
             </TopLink>
