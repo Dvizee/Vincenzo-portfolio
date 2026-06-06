@@ -148,3 +148,13 @@ body {
   animation: drive-car 28s linear infinite;
   animation-delay: -22.4s;
 }
+
+@media (max-width: 640px) {
+  .hero-text-outline {
+    text-shadow:
+      -0.75px -0.75px 0 #1D4ED8,
+       0.75px -0.75px 0 #1D4ED8,
+      -0.75px  0.75px 0 #1D4ED8,
+       0.75px  0.75px 0 #1D4ED8;
+  }
+}
