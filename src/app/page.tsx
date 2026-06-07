@@ -24,7 +24,7 @@ export default function Home() {
             Vincenzo Barager
           </div>
 
-          <nav className="flex flex-wrap items-center justify-center gap-1 font-semibold sm:justify-end">
+          <nav className="flex flex-nowrap items-center justify-center gap-1 font-semibold sm:flex-wrap sm:justify-end">
             <TopLink href="https://www.linkedin.com/in/vincenzo-barager/">
               <Linkedin size={18} className="inline mr-1" />
               LinkedIn
@@ -51,7 +51,7 @@ export default function Home() {
       <div className="mx-auto max-w-6xl px-6 py-0 space-y-0">
         {/* Hero */}
         <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-visible bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800">
-          {/* Waves - desktop/tablet only */}
+          {/* Waves */}
           <div className="absolute inset-0 z-0 hidden pointer-events-none sm:block">
             <svg
               className="absolute bottom-[-40px] w-full"
@@ -120,7 +120,6 @@ export default function Home() {
 
           <div className="relative z-30 mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-20">
             <header className="flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
-              {/* Mobile: image + title side by side */}
               <div className="flex w-full items-center justify-center gap-3 md:contents">
                 <Image
                   src="/images/Vincenzo.png"
@@ -143,7 +142,6 @@ export default function Home() {
               </div>
 
               <div className="space-y-8 text-center md:pt-6 md:text-left">
-                {/* Desktop title only */}
                 <h1
                   className="hidden text-3xl font-semibold tracking-tight text-white sm:text-4xl md:block"
                   style={{
@@ -523,7 +521,7 @@ function TopLink({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className="flex items-center gap-1 rounded-md px-2 py-1 text-sm text-blue-600 hover:bg-blue-50 hover:text-blue-800 sm:px-3 sm:py-1.5 sm:text-lg"
+      className="flex items-center gap-1 rounded-md px-1.5 py-1 text-[0.95rem] text-blue-600 hover:bg-blue-50 hover:text-blue-800 sm:px-3 sm:py-1.5 sm:text-lg"
     >
       {children}
     </a>
