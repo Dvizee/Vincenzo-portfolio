@@ -393,7 +393,7 @@ export default function Home() {
             <div className="space-y-4">
               <ExperienceItem
                 role="E-Commerce Assistant"
-                company="Florida Tech Copy Center"
+                company="Florida Institute of Technology"
                 dates="September 2025 – December 2025"
                 bullets={[
                   "Maintained and updated a web-to-print portal for campus print orders.",
@@ -404,7 +404,7 @@ export default function Home() {
 
               <ExperienceItem
                 role="Crew Member"
-                company="Rathskeller, Florida Tech"
+                company="Rathskeller, Florida Institute of Technology"
                 dates="September 2023 – May 2025"
                 bullets={[
                   "Displayed a high level of responsibility and reliability in performing managerial duties.",
