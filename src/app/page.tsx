@@ -72,13 +72,13 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 z-20 hidden [@media(min-width:1450px)]:block">
             <div
               className="absolute h-[310px] w-[310px] rounded-full bg-white"
-              style={{ left: 130, top: 140 }}
+              style={{ left: 160, top: 140 }}
             />
 
             <div
               className="circle-intro-spin absolute h-[180px] w-[180px] rounded-full bg-white"
               style={{
-                left: -80,
+                left: -50,
                 top: 30,
                 transformOrigin: "365px 265px",
               }}
@@ -92,7 +92,7 @@ export default function Home() {
             <div
               className="circle-intro-spin-slow absolute h-[110px] w-[110px] rounded-full bg-white"
               style={{
-                right: 100,
+                right: 65,
                 bottom: 125,
                 transformOrigin: "145px -180px",
               }}
