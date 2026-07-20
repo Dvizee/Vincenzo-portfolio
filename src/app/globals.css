@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+section[id],
+div[id] {
+  scroll-margin-top: 4rem;
 }
 
 @keyframes orbit {
@@ -83,6 +92,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .circle-intro-spin,
   .circle-intro-spin-slow {
     animation: none;
@@ -112,7 +125,23 @@ body {
     transform: translateX(-200px);
   }
   100% {
-    transform: translateX(calc(100vw + 200px));
+    transform: translateX(var(--drive-distance, calc(100vw + 200px)));
+  }
+}
+
+.experience-skyline {
+  --drive-distance: calc(154vw + 320px);
+}
+
+@media (min-width: 640px) {
+  .experience-skyline {
+    --drive-distance: calc(125vw + 280px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .experience-skyline {
+    --drive-distance: calc(100vw + 220px);
   }
 }
 
